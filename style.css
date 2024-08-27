@@ -1,6 +1,6 @@
 :root {
     --color-heading: #0B0D19;
-    --color-body: #677386;
+    --color-body: #efefef;
     --color-bg-button: #3D7BFA;
     --color-text-button: #FFF;
 
@@ -10,3 +10,88 @@
 
 
 /* Begynd her... */
+
+
+
+* {
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+h1{
+    color: var(--color-heading);
+    font-size: 4rem;
+    
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+button{
+    background-color: var(--color-bg-button);
+    color: var(--color-text-button);
+    width: 12rem;
+    height: 3rem;
+    border-radius: 3rem;
+}
+
+body{
+    background-color: var(--color-body);
+    margin: 20px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+   
+}
+.bigPic{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.grid_1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.img1{
+    grid-area: img1;
+}
+.img2{
+    grid-area: img2;
+}
+.img3{
+    grid-area: img3;
+}
+.img4{
+
+    grid-area: img4;
+}
+.img5{
+    grid-area: img5;
+}
+.img6{ 
+    grid-area: img6;
+}
+
+.img7{
+    grid-area: img7;
+}
+
+
+
+.grid_1-1-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+    ". img1 ."
+    "img2 img3 img4"
+    "img5 img3 img6"
+    ". img7 ." ;
+}
