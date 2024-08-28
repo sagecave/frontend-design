@@ -15,10 +15,20 @@ article {
 
 .picture {
     display: grid;
-    padding: .5rem;
+    padding: 0;
 
     >* {
-        grid-area: 1 / 1;
+        grid-area: 1 / 2;
+    }
+
+    & a{
+        border: solid 2px white;
+        border-radius: 50%;
+        background-color: white;
+
+        & svg path{
+            fill: rgba(0, 119, 255, 0.246);
+        }
     }
 
     .back {
@@ -33,15 +43,16 @@ article {
         border-radius: 1rem;
         letter-spacing: 2px;
         line-height: 1;
-        place-self: end;
-        background: #BDC4CE;
+        place-self: end start;
+        background: #7d7e7f;
         color: #fff;
         margin: 1rem;
     }
 
     img {
         border: 1px solid #DADCEB;
-        border-radius: .5rem;
+        border-radius: .5rem .5rem 0rem 0rem;
+        padding: 0%;
     }
 }
 
@@ -55,31 +66,32 @@ article {
     font-family: 'Abril Fatface', sans-serif;
     font-weight: 400;
     font-size: 2rem;
-    color: #3C55CC;
+    color: #2e2e2e;
 }
 
 .location {
     color: #C8C9CB;
-    text-transform: uppercase;
+    
     font-size: .95em;
 }
 
 .description p {
-    text-align: center;
+    color:#a3a3a3 ;
 }
 
 .amenities-details {
     display: flex;
     gap: 1rem;
+    
 
     li {
         flex: 1;
         display: grid;
         gap: .75rem;
-        place-items: center;
+        
         padding: .25rem;
-        background: #F0F2FF;
-        color: #3C55CC;
+        
+        color: #a3a3a3;
     }
 }
 
@@ -102,12 +114,13 @@ footer {
         border-radius: 8px;
         font-weight: 500;
         font: inherit;
-        background: #F0F2FF;
-        color: #3C55CC;
+        background: #3C55CC;
+        color: #F0F2FF;
     }
 
     .price {
         font-weight: 600;
+        font-size: 1.3rem;
 
         span {
             color: #908F9F;
