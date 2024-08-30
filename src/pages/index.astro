@@ -41,10 +41,6 @@ import { cardContent } from "../data/card-content.js";
     > * {
       grid-column: 4;
     }
-
-    .full {
-      grid-column: full;
-    }
   }
   section {
     /* tror jeg skal lave et ny grid template, hvor der kun er plads til de to værdier jeg skal bruge, for bruger ikke
@@ -68,10 +64,6 @@ import { cardContent } from "../data/card-content.js";
 
     & header {
       grid-column: content;
-    }
-
-    .scroller {
-      padding-inline: max(1rem, 50% - var(--content-width) / 2);
     }
   }
 </style>
