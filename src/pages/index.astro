@@ -19,12 +19,7 @@ import { cardContent } from "../data/card-content.js";
       <section>
         <header>
           <h2>Financial Projections</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </header>
 
         <ScrollingContainer cardContent={cardContent} />
@@ -34,9 +29,71 @@ import { cardContent } from "../data/card-content.js";
 </html>
 
 <style>
+  :root {
+    --content-width: 75rem;
+  }
   main {
-    padding-block: 4rem; /* Kun af æstetiske årsager */
+    padding-block: 4rem;
+    /* Kun af æstetiske årsager */
+    display: grid;
+    grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr;
+
+    > * {
+      grid-column: 4;
+    }
+
+    .full {
+      grid-column: 1/-1;
+    }
   }
   section {
+    /* tror jeg skal lave et ny grid template, hvor der kun er plads til de to værdier jeg skal bruge, for bruger ikke
+    mine --gap, --full, --content. osv. til noget*/
+    grid-area: 1/2;
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(50ch, 100% - var(--gap) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full)
+      [feature-start] var(--feature)
+      [popout-start] var(--popout)
+      [content-start] var(--content) [content-end]
+      var(--popout) [popout-end]
+      var(--feature) [feature-end]
+      var(--full) [full-end];
+
+    & header {
+      grid-column: 4/5;
+    }
+
+    .scroller {
+      padding-inline: max(1rem, 50% - var(--content-width) / 2);
+    }
   }
 </style>
+
+<!-- main {
+  padding-block: 4rem;
+  /* Kun af æstetiske årsager */
+  & > * {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(50ch, 100% - var(--gap) * 2);
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full)
+      [content-start] var(--content) [content-end]
+      var(--full) [full-end];
+  }
+
+  & section {
+    grid-column: --content;
+  }
+}
+section {
+} -->
