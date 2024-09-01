@@ -18,13 +18,18 @@ ul {
     /* Tilføj container regel, når width > 700px */
     /* - Indstil 2 kolonner */
     /* - Sæt det første barn til `grid-column: span 2` */
+    
     @container (width > 700px){
-      
+        
+        &{
+            grid-template-columns: 1fr 1fr;
+        }
 
-        & :first-child{
-           
+        & >*:first-child {
+            
             grid-column: span 2;
-            grid-row: span 3;
+            
+          
             
             
           
