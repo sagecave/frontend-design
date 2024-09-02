@@ -3,6 +3,8 @@
     display: block grid;
     grid-template-columns: auto auto;
     gap: 0 1em;
+    
+ 
 }
 
 .content {
@@ -11,6 +13,9 @@
     background: #fff;
     box-shadow: 0px 15px 35px 0px rgba(13, 23, 38, 0.07);
     border-inline-start: 7px solid #4f48ed;
+   
+   
+   
 }
 
 .tag {
@@ -39,3 +44,4 @@ h3 strong {
 small {
     color: #aeb5bf;
 }
+
